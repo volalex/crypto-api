@@ -1,0 +1,24 @@
+services:
+  scrapper:
+    image: crypto-scrapper:latest
+    networks:
+      - backend
+    environment:
+      - "SPRING_RABBITMQ_HOST=rabbit"
+      - "SPRING_RABBITMQ_USERNAME=guest"
+      - "SPRING_RABBITMQ_PASSWORD=123456"
+  api:
+    image: crypto-api:latest
+    networks:
+      - backend
+    environment:
+      - "SPRING_RABBITMQ_HOST=rabbit"
+      - "SPRING_RABBITMQ_USERNAME=guest"
+      - "SPRING_RABBITMQ_PASSWORD=123456"
+  rabbit:
+    image: my-rabbit
+    networks:
+      - backend
+networks:
+  backend: { }
+
