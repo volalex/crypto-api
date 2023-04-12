@@ -1,0 +1,7 @@
+GET http://localhost:8080/price
+###
+GET http://localhost:8080/price/max/ETHBTC
+###
+GET http://localhost:8080/price/min/ETHBTC
+###
+GET http://localhost:8080/price/avg/ETHBTC

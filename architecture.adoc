@@ -1,0 +1,11 @@
+[plantuml, target=arch.png]
+....
+[crypto-parser] as Parser
+[crypto-api] as API
+[RabbitMQ] as Rabbit
+BinanceAPI - Parser : HTTP
+Parser - Rabbit : AMQP
+Rabbit-API : AMQP
+API - Database : JDBC
+API - HTTPAPI: HTTP
+....
